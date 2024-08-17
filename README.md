@@ -1,8 +1,10 @@
 # Quiz-Game
 
-- Quiz game that extracts data from the 'Open Trivia Database' through calling an api with specific parameters of what type of questions I want. In this case I asked for 10 questions, with a boolean type.
+This code initializes and runs a quiz application by integrating question data, quiz logic, and a graphical user interface (GUI). It first imports necessary classes and data, including Question for handling individual questions, question_data which contains the list of questions fetched from an external source, QuizBrain for managing the quiz logic, and QuizInterface for creating the user interface.
 
-- I used multiple files to handle a specific part of the project.
+The code then constructs a question_bank, which is a list of Question objects. Each Question object is created using the text and correct answer from the question_data. This list of questions is passed to the QuizBrain instance, which is responsible for managing the quiz flow.
+
+Finally, the QuizInterface is initialized with the QuizBrain instance, launching the quiz in a graphical window. After the user completes the quiz, the program prints a message indicating the end of the quiz and displays the user's final score in the console. This structure effectively combines the backend logic and frontend interface to create a complete quiz application.
 
 # UI.py
 - I used a GUI called tkinter to allow the user to interact with the quiz.
@@ -52,10 +54,16 @@
 
 - Parameters:
   
-amount: Specifies the number of quiz questions to fetch (10 in this case).
-type: Sets the type of questions to "boolean" (True/False).
+- amount: Specifies the number of quiz questions to fetch (10 in this case).
+- type: Sets the type of questions to "boolean" (True/False).
 
+- API Endpoint:
+  - The api_endpoint variable stores the URL for the Open Trivia Database API
 
+- requests.get sends an HTTP GET request to the API with the specified parameters.
+- response.raise_for_status() checks for any HTTP errors (e.g., 404 or 500) and raises an exception if any are found.
+- The response is parsed as JSON, and the list of questions is accessed via response.json()["results"] and stored in the question_data variable.
+- This question_data list will contain the quiz questions and their corresponding answers, which will then be used by the QuizBrain class/
 
 
 
