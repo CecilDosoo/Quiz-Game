@@ -47,8 +47,13 @@
 
 - Compares the user's answer with the correct answer (case-insensitive). If correct, it increments the score and returns True; otherwise, it returns False
 
+# DATA.py
+- This file is used to extract code from the 'Open Trivia Database' API.
 
-
+- Parameters:
+  
+amount: Specifies the number of quiz questions to fetch (10 in this case).
+type: Sets the type of questions to "boolean" (True/False).
 
 
 
