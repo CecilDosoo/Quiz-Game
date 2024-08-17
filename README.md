@@ -7,6 +7,7 @@ This project is a simple Quiz Game application built using Python. It integrates
 - [ui.py](#uipy)
 - [quiz_brain.py](#quiz_brainpy)
 - [data.py](#datapy)
+- [question_model.py](#questionmodelpy)
 
 ## main.py
 
@@ -92,3 +93,14 @@ The `data.py` file is used to extract question data from the Open Trivia Databas
   - The response is parsed as JSON, and the list of questions is accessed via `response.json()["results"]` and stored in the `question_data` variable.
 
 This `question_data` list contains the quiz questions and their corresponding answers, which are used by the `QuizBrain` class.
+
+## question_model.py
+
+The `question_model.py` file contains the `Question` class, which is used to create question objects in the quiz.
+
+### Key Components:
+- **Initialization (`__init__`)**:
+  - The `Question` class takes two arguments: `q_text` (the text of the question) and `q_answer` (the correct answer).
+  - These are stored in the `text` and `answer` attributes of the class, respectively.
+
+This class serves as a simple model to encapsulate the data for each quiz question, making it easier to manage and use within the `QuizBrain` class.
