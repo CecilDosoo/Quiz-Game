@@ -1,10 +1,10 @@
 # Quiz Game
 
 This project is a simple Quiz Game application built using Python. It integrates question data from an external API, manages quiz logic, and provides a graphical user interface (GUI) using Tkinter.
-![image](https://github.com/user-attachments/assets/48a24ef5-1ca1-4fec-8230-3758dd5935e4)
-![image](https://github.com/user-attachments/assets/33fbbea1-fd76-4e5a-a31d-09dc0b8950f4)
-![image](https://github.com/user-attachments/assets/0e81a21a-827d-4472-92ed-f1161e7e6eb9)
-![image](https://github.com/user-attachments/assets/fad8778f-a80f-406a-afba-4ecfffe9177b)
+
+
+
+
 
 
 
@@ -39,10 +39,12 @@ The `main.py` file initializes and runs the quiz program by integrating the ques
 
 4. **Completion**:
    - Once the quiz ends, it prints a message and displays the user’s final score in the console.
-
+   - ![image](https://github.com/user-attachments/assets/fad8778f-a80f-406a-afba-4ecfffe9177b)
 ## ui.py
 
 The `ui.py` file is responsible for the graphical user interface (GUI) using Tkinter.
+
+![image](https://github.com/user-attachments/assets/48a24ef5-1ca1-4fec-8230-3758dd5935e4)
 
 ### Key Components:
 - **Initialization (`__init__`)**:
@@ -59,6 +61,8 @@ The `ui.py` file is responsible for the graphical user interface (GUI) using Tki
 - **Button Press Methods (`true_pressed` and `false_pressed`)**:
   - Handle user input for True and False answers.
   - Check if the answer is correct and give feedback.
+  - ![image](https://github.com/user-attachments/assets/33fbbea1-fd76-4e5a-a31d-09dc0b8950f4)
+  - ![image](https://github.com/user-attachments/assets/0e81a21a-827d-4472-92ed-f1161e7e6eb9)
 
 - **give_feedback()**:
   - Provides visual feedback by changing the canvas color to green (correct) or red (incorrect).
