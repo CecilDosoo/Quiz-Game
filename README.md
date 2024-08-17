@@ -7,7 +7,7 @@
 # UI.py
 - I used a GUI called tkinter to allow the user to interact with the quiz.
  
-- In the class Initialization (__init__):
+# In the class Initialization (__init__):
   
 - Initializes the main window with a title and background color.
 - Sets up a label to display the score.
@@ -15,7 +15,7 @@
 - Adds two buttons (True/False) with images to allow the user to answer questions.
 - Calls the get_next_question method to load the first question.
 
-- get_next_question():
+# get_next_question():
 
 - Updates the quiz question on the canvas or displays a message if there are no more questions.
 - Updates the score label with the current score.
@@ -24,7 +24,7 @@
 
 - Handle user input for True and False answers, check if the answer is correct, and then give feedback.
 
-- give_feedback():
+# give_feedback():
 
 - Provides visual feedback by changing the canvas color to green (correct) or red (incorrect).
 - Moves on to the next question after a brief delay.
