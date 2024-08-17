@@ -1,6 +1,13 @@
 # Quiz Game
 
 This project is a simple Quiz Game application built using Python. It integrates question data from an external API, manages quiz logic, and provides a graphical user interface (GUI) using Tkinter.
+![image](https://github.com/user-attachments/assets/48a24ef5-1ca1-4fec-8230-3758dd5935e4)
+![image](https://github.com/user-attachments/assets/33fbbea1-fd76-4e5a-a31d-09dc0b8950f4)
+![image](https://github.com/user-attachments/assets/0e81a21a-827d-4472-92ed-f1161e7e6eb9)
+![image](https://github.com/user-attachments/assets/fad8778f-a80f-406a-afba-4ecfffe9177b)
+
+
+
 
 ## Table of Contents
 - [main.py](#mainpy)
