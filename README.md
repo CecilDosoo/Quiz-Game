@@ -1,21 +1,22 @@
 # Quiz-Game
 
-This code initializes and runs a quiz application by integrating question data, quiz logic, and a graphical user interface (GUI). It first imports necessary classes and data, including Question for handling individual questions, question_data which contains the list of questions fetched from an external source, QuizBrain for managing the quiz logic, and QuizInterface for creating the user interface.
+# main.py
+The code initializes and runs the quiz program by integrating question data, quiz logic, and a graphical user interface (GUI). It first imports necessary classes and data, including Question for handling individual questions, question_data which contains the list of questions fetched from an external source, QuizBrain for managing the quiz logic, and QuizInterface for creating the user interface.
 
 The code then constructs a question_bank, which is a list of Question objects. Each Question object is created using the text and correct answer from the question_data. This list of questions is passed to the QuizBrain instance, which is responsible for managing the quiz flow.
 
 Finally, the QuizInterface is initialized with the QuizBrain instance, launching the quiz in a graphical window. After the user completes the quiz, the program prints a message indicating the end of the quiz and displays the user's final score in the console. This structure effectively combines the backend logic and frontend interface to create a complete quiz application.
 
 # UI.py
-- I used a GUI called tkinter to allow the user to interact with the quiz.
+I used a GUI called tkinter to allow the user to interact with the quiz.
  
-# In the class Initialization (__init__):
+- In the class Initialization (__init__):
   
-- Initializes the main window with a title and background color.
-- Sets up a label to display the score.
-- Creates a canvas to display quiz questions.
-- Adds two buttons (True/False) with images to allow the user to answer questions.
-- Calls the get_next_question method to load the first question.
+Initializes the main window with a title and background color.
+Sets up a label to display the score.
+Creates a canvas to display quiz questions.
+Adds two buttons (True/False) with images to allow the user to answer questions.
+Calls the get_next_question method to load the first question.
 
 # get_next_question():
 
