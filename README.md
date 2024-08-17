@@ -1,76 +1,94 @@
-# Quiz-Game
+# Quiz Game
 
-# main.py
-The code initializes and runs the quiz program by integrating question data, quiz logic, and a graphical user interface (GUI). It first imports necessary classes and data, including Question for handling individual questions, question_data which contains the list of questions fetched from an external source, QuizBrain for managing the quiz logic, and QuizInterface for creating the user interface.
+This project is a simple Quiz Game application built using Python. It integrates question data from an external API, manages quiz logic, and provides a graphical user interface (GUI) using Tkinter.
 
-The code then constructs a question_bank, which is a list of Question objects. Each Question object is created using the text and correct answer from the question_data. This list of questions is passed to the QuizBrain instance, which is responsible for managing the quiz flow.
+## Table of Contents
+- [main.py](#mainpy)
+- [ui.py](#uipy)
+- [quiz_brain.py](#quiz_brainpy)
+- [data.py](#datapy)
 
-Finally, the QuizInterface is initialized with the QuizBrain instance, launching the quiz in a graphical window. After the user completes the quiz, the program prints a message indicating the end of the quiz and displays the user's final score in the console. This structure effectively combines the backend logic and frontend interface to create a complete quiz application.
+## main.py
 
-# UI.py
-I used a GUI called tkinter to allow the user to interact with the quiz.
- 
-- In the class Initialization (__init__):
-  
-Initializes the main window with a title and background color.
-Sets up a label to display the score.
-Creates a canvas to display quiz questions.
-Adds two buttons (True/False) with images to allow the user to answer questions.
-Calls the get_next_question method to load the first question.
+The `main.py` file initializes and runs the quiz program by integrating the question data, quiz logic, and GUI.
 
-# get_next_question():
+### Key Components:
+- **Imports**: 
+  - `Question`: Handles individual questions.
+  - `question_data`: Contains the list of questions fetched from an external source.
+  - `QuizBrain`: Manages the quiz logic.
+  - `QuizInterface`: Creates the user interface.
 
-- Updates the quiz question on the canvas or displays a message if there are no more questions.
-- Updates the score label with the current score.
+### Workflow:
+1. **Question Bank**: 
+   - Constructs a `question_bank` list, where each item is a `Question` object created using text and correct answer from `question_data`.
+   
+2. **QuizBrain**:
+   - Manages the quiz flow by receiving the `question_bank`.
 
-- Button Press Methods (true_pressed and false_pressed):
+3. **QuizInterface**:
+   - Launches the quiz in a graphical window, interacting with `QuizBrain`.
 
-- Handle user input for True and False answers, check if the answer is correct, and then give feedback.
+4. **Completion**:
+   - Once the quiz ends, it prints a message and displays the user’s final score in the console.
 
-# give_feedback():
+## ui.py
 
-- Provides visual feedback by changing the canvas color to green (correct) or red (incorrect).
-- Moves on to the next question after a brief delay.
+The `ui.py` file is responsible for the graphical user interface (GUI) using Tkinter.
 
-# QUIZ_BRAIN.py
+### Key Components:
+- **Initialization (`__init__`)**:
+  - Initializes the main window with a title and background color.
+  - Sets up a label to display the score.
+  - Creates a canvas to display quiz questions.
+  - Adds two buttons (True/False) with images for user interaction.
+  - Calls `get_next_question` to load the first question.
 
-- In the class Initialization (__init__):
+- **get_next_question()**:
+  - Updates the quiz question on the canvas.
+  - Updates the score label or displays a message if there are no more questions.
 
-- Takes a list of questions (q_list) and initializes the question number, score, and the current question.
+- **Button Press Methods (`true_pressed` and `false_pressed`)**:
+  - Handle user input for True and False answers.
+  - Check if the answer is correct and give feedback.
 
-- still_has_questions():
+- **give_feedback()**:
+  - Provides visual feedback by changing the canvas color to green (correct) or red (incorrect).
+  - Moves to the next question after a brief delay.
 
-- Checks if there are any questions left to ask by comparing the current question number with the length of the question list.
+## quiz_brain.py
 
-- next_question():
+The `quiz_brain.py` file contains the `QuizBrain` class, which manages the quiz's logic.
 
-- Retrieves the next question from the list, increments the question number, and returns the question text after unescaping any HTML entities to avoid running into errors.
+### Key Components:
+- **Initialization (`__init__`)**:
+  - Takes a list of questions (`q_list`) and initializes the question number, score, and the current question.
 
-- check_answer():
+- **still_has_questions()**:
+  - Checks if there are any remaining questions.
 
-- Compares the user's answer with the correct answer (case-insensitive). If correct, it increments the score and returns True; otherwise, it returns False
+- **next_question()**:
+  - Retrieves the next question, increments the question number, and returns the question text after unescaping any HTML entities.
 
-# DATA.py
-- This file is used to extract code from the 'Open Trivia Database' API.
+- **check_answer()**:
+  - Compares the user's answer with the correct answer (case-insensitive).
+  - If correct, increments the score and returns `True`; otherwise, returns `False`.
 
-- Parameters:
-  
-- amount: Specifies the number of quiz questions to fetch (10 in this case).
-- type: Sets the type of questions to "boolean" (True/False).
+## data.py
 
-- API Endpoint:
-  - The api_endpoint variable stores the URL for the Open Trivia Database API
+The `data.py` file is used to extract question data from the Open Trivia Database API.
 
-- requests.get sends an HTTP GET request to the API with the specified parameters.
-- response.raise_for_status() checks for any HTTP errors (e.g., 404 or 500) and raises an exception if any are found.
-- The response is parsed as JSON, and the list of questions is accessed via response.json()["results"] and stored in the question_data variable.
-- This question_data list will contain the quiz questions and their corresponding answers, which will then be used by the QuizBrain class/
+### Key Components:
+- **Parameters**:
+  - `amount`: Specifies the number of quiz questions to fetch (10 in this case).
+  - `type`: Sets the type of questions to "boolean" (True/False).
 
+- **API Endpoint**:
+  - The `api_endpoint` variable stores the URL for the Open Trivia Database API.
 
+- **HTTP Request**:
+  - `requests.get` sends an HTTP GET request to the API with the specified parameters.
+  - `response.raise_for_status()` checks for any HTTP errors and raises an exception if found.
+  - The response is parsed as JSON, and the list of questions is accessed via `response.json()["results"]` and stored in the `question_data` variable.
 
-
-
-
-
-
-  
+This `question_data` list contains the quiz questions and their corresponding answers, which are used by the `QuizBrain` class.
